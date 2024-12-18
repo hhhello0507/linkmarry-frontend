@@ -1,4 +1,4 @@
-import {CSSProperties, ReactElement} from "react";
+import React, {CSSProperties, ReactElement} from "react";
 import AddEmoji from "./icon/AddEmoji";
 import AddFill from "./icon/AddFill";
 import AddLine from "./icon/AddLine";
@@ -105,7 +105,7 @@ export enum IconType {
     Write,
 }
 
-interface IconProps {
+interface IconProps extends React.HTMLAttributes<SVGSVGElement> {
     type: IconType;
     tint?: CSSProperties['color'];
     size?: CSSProperties['width'];
@@ -115,111 +115,112 @@ export default function Icon(
     {
         type,
         tint = 'black',
-        size = 24
+        size = 24,
+        ...props
     }: IconProps
 ): ReactElement {
     switch (type) {
         case IconType.AddEmoji:
-            return <AddEmoji fill={tint} width={size} height={size}/>;
+            return <AddEmoji fill={tint} width={size} height={size} {...props}/>;
         case IconType.AddFill:
-            return <AddFill fill={tint} width={size} height={size}/>;
+            return <AddFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.AddLine:
-            return <AddLine fill={tint} width={size} height={size}/>;
+            return <AddLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.AddRing:
-            return <AddRing fill={tint} width={size} height={size}/>;
+            return <AddRing fill={tint} width={size} height={size} {...props}/>;
         case IconType.Alarm:
-            return <Alarm fill={tint} width={size} height={size}/>;
+            return <Alarm fill={tint} width={size} height={size} {...props}/>;
         case IconType.AlarmDisabled:
-            return <AlarmDisabled fill={tint} width={size} height={size}/>;
+            return <AlarmDisabled fill={tint} width={size} height={size} {...props}/>;
         case IconType.Book:
-            return <Book fill={tint} width={size} height={size}/>;
+            return <Book fill={tint} width={size} height={size} {...props}/>;
         case IconType.BookmarkFill:
-            return <BookmarkFill fill={tint} width={size} height={size}/>;
+            return <BookmarkFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.BookmarkLine:
-            return <BookmarkLine fill={tint} width={size} height={size}/>;
+            return <BookmarkLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.Calendar:
-            return <Calendar fill={tint} width={size} height={size}/>;
+            return <Calendar fill={tint} width={size} height={size} {...props}/>;
         case IconType.Camera:
-            return <Camera fill={tint} width={size} height={size}/>;
+            return <Camera fill={tint} width={size} height={size} {...props}/>;
         case IconType.Chat:
-            return <Chat fill={tint} width={size} height={size}/>;
+            return <Chat fill={tint} width={size} height={size} {...props}/>;
         case IconType.CheckFill:
-            return <CheckFill fill={tint} width={size} height={size}/>;
+            return <CheckFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.CheckLine:
-            return <CheckLine fill={tint} width={size} height={size}/>;
+            return <CheckLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.CheckRing:
-            return <CheckRing fill={tint} width={size} height={size}/>;
+            return <CheckRing fill={tint} width={size} height={size} {...props}/>;
         case IconType.Copy:
-            return <Copy fill={tint} width={size} height={size}/>;
+            return <Copy fill={tint} width={size} height={size} {...props}/>;
         case IconType.CrossFill:
-            return <CrossFill fill={tint} width={size} height={size}/>;
+            return <CrossFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.CrossLine:
-            return <CrossLine fill={tint} width={size} height={size}/>;
+            return <CrossLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.CrossRing:
-            return <CrossRing fill={tint} width={size} height={size}/>;
+            return <CrossRing fill={tint} width={size} height={size} {...props}/>;
         case IconType.Crown:
-            return <Crown fill={tint} width={size} height={size}/>;
+            return <Crown fill={tint} width={size} height={size} {...props}/>;
         case IconType.CurveArrow:
-            return <CurveArrow fill={tint} width={size} height={size}/>;
+            return <CurveArrow fill={tint} width={size} height={size} {...props}/>;
         case IconType.Detail:
-            return <Detail fill={tint} width={size} height={size}/>;
+            return <Detail fill={tint} width={size} height={size} {...props}/>;
         case IconType.ExclamationFill:
-            return <ExclamationFill fill={tint} width={size} height={size}/>;
+            return <ExclamationFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.ExclamationLine:
-            return <ExclamationLine fill={tint} width={size} height={size}/>;
+            return <ExclamationLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.ExpandArrow:
-            return <ExpandArrow fill={tint} width={size} height={size}/>;
+            return <ExpandArrow fill={tint} width={size} height={size} {...props}/>;
         case IconType.File:
-            return <File fill={tint} width={size} height={size}/>;
+            return <File fill={tint} width={size} height={size} {...props}/>;
         case IconType.HeartFill:
-            return <HeartFill fill={tint} width={size} height={size}/>;
+            return <HeartFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.HeartLine:
-            return <HeartLine fill={tint} width={size} height={size}/>;
+            return <HeartLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.Hide:
-            return <Hide fill={tint} width={size} height={size}/>;
+            return <Hide fill={tint} width={size} height={size} {...props}/>;
         case IconType.Home:
-            return <Home fill={tint} width={size} height={size}/>;
+            return <Home fill={tint} width={size} height={size} {...props}/>;
         case IconType.Logout:
-            return <Logout fill={tint} width={size} height={size}/>;
+            return <Logout fill={tint} width={size} height={size} {...props}/>;
         case IconType.LoudSpeaker:
-            return <LoudSpeaker fill={tint} width={size} height={size}/>;
+            return <LoudSpeaker fill={tint} width={size} height={size} {...props}/>;
         case IconType.Manage:
-            return <Manage fill={tint} width={size} height={size}/>;
+            return <Manage fill={tint} width={size} height={size} {...props}/>;
         case IconType.Moon:
-            return <Moon fill={tint} width={size} height={size}/>;
+            return <Moon fill={tint} width={size} height={size} {...props}/>;
         case IconType.NormalArrow:
-            return <NormalArrow fill={tint} width={size} height={size}/>;
+            return <NormalArrow fill={tint} width={size} height={size} {...props}/>;
         case IconType.Pen:
-            return <Pen fill={tint} width={size} height={size}/>;
+            return <Pen fill={tint} width={size} height={size} {...props}/>;
         case IconType.Person:
-            return <Person fill={tint} width={size} height={size}/>;
+            return <Person fill={tint} width={size} height={size} {...props}/>;
         case IconType.Photo:
-            return <Photo fill={tint} width={size} height={size}/>;
+            return <Photo fill={tint} width={size} height={size} {...props}/>;
         case IconType.Ping:
-            return <Ping fill={tint} width={size} height={size}/>;
+            return <Ping fill={tint} width={size} height={size} {...props}/>;
         case IconType.RadioFill:
-            return <RadioFill fill={tint} width={size} height={size}/>;
+            return <RadioFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.RadioLine:
-            return <RadioLine fill={tint} width={size} height={size}/>;
+            return <RadioLine fill={tint} width={size} height={size} {...props}/>;
         case IconType.Search:
-            return <Search fill={tint} width={size} height={size}/>;
+            return <Search fill={tint} width={size} height={size} {...props}/>;
         case IconType.Send:
-            return <Send fill={tint} width={size} height={size}/>;
+            return <Send fill={tint} width={size} height={size} {...props}/>;
         case IconType.Setting:
-            return <Setting fill={tint} width={size} height={size}/>;
+            return <Setting fill={tint} width={size} height={size} {...props}/>;
         case IconType.Show:
-            return <Show fill={tint} width={size} height={size}/>;
+            return <Show fill={tint} width={size} height={size} {...props}/>;
         case IconType.Star:
-            return <Star fill={tint} width={size} height={size}/>;
+            return <Star fill={tint} width={size} height={size} {...props}/>;
         case IconType.StopArrow:
-            return <StopArrow fill={tint} width={size} height={size}/>;
+            return <StopArrow fill={tint} width={size} height={size} {...props}/>;
         case IconType.Substack:
-            return <Substack fill={tint} width={size} height={size}/>;
+            return <Substack fill={tint} width={size} height={size} {...props}/>;
         case IconType.Trash:
-            return <Trash fill={tint} width={size} height={size}/>;
+            return <Trash fill={tint} width={size} height={size} {...props}/>;
         case IconType.Utensils:
-            return <Utensils fill={tint} width={size} height={size}/>;
+            return <Utensils fill={tint} width={size} height={size} {...props}/>;
         case IconType.Write:
-            return <Write fill={tint} width={size} height={size}/>;
+            return <Write fill={tint} width={size} height={size} {...props}/>;
     }
 };
