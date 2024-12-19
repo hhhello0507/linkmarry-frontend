@@ -73,7 +73,7 @@ export default function Button(
     }
 
     return (
-        <S.Container
+        <S.container
             style={{
                 opacity: enabled ? 1 : 0.5,
                 background,
@@ -93,12 +93,12 @@ export default function Button(
             {trailingIcon && (
                 <Icon type={trailingIcon} tint={foreground} size={iconSize}/>
             )}
-        </S.Container>
+        </S.container>
     )
 }
 
 const S = {
-    Container: styled.button<{
+    container: styled.button<{
         enabled: boolean,
         textType: TextType
     }>`

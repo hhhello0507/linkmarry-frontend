@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Button, {ButtonRole, ButtonSize} from "../component/button";
 import HorizontalDivider, {HorizontalDividerSize} from "../component/horizontalDivider";
 import {TextField} from "../component/textField";
+import Checkbox from "../component/checkbox";
 
 function ComponentDemo() {
     const buttonSizes: ButtonSize[] = ['large', 'medium', 'small'];
@@ -10,6 +11,8 @@ function ComponentDemo() {
     const dividerSizes: HorizontalDividerSize[] = ['large', 'medium', 'small'];
 
     const [input, setInput] = useState('');
+
+    const [checked, setChecked] = useState(false);
 
     return (
         <div style={{
@@ -66,6 +69,21 @@ function ComponentDemo() {
                 style={{
                     marginTop: 32
                 }}
+            />
+
+            <Checkbox
+                style={{
+                    marginTop: 32
+                }}
+                title={'title'}
+                checked={checked}
+                onChange={setChecked}
+            />
+            <Checkbox
+                title={'title'}
+                checked={checked}
+                rounded={true}
+                onChange={setChecked}
             />
         </div>
     );

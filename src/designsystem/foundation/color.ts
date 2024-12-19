@@ -21,7 +21,12 @@ const color = {
     g300: '#BFBFBF',
     g200: '#E3E3E3',
     g100: '#F2F4F6',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    
+    /*
+    ETC
+     */
+    transparent: 'transparent',
 };
 
 export default color;
