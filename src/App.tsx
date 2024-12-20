@@ -6,13 +6,13 @@ import RegisterPage from "./page/RegisterPage";
 import config from "./config/config";
 import KakaoRedirectPage from "./page/KakaoRedirectPage";
 
+const {Kakao} = window as any;
+
 function App() {
     useEffect(() => {
-        const kakao = (window as any)?.Kakao;
-
         // 카카오 객체를 초기화 (필수)
-        if (!kakao?.isInitialized()) {
-            kakao?.init(config.kakao.javascriptKey);
+        if (!Kakao?.isInitialized()) {
+            Kakao?.init(config.kakao.javascriptKey);
         }
     }, []);
 
