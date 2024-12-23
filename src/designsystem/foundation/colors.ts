@@ -1,4 +1,4 @@
-const color = {
+const colors = {
     /*
     Primary colors
      */
@@ -29,4 +29,4 @@ const color = {
     transparent: 'transparent',
 };
 
-export default color;
+export default colors;

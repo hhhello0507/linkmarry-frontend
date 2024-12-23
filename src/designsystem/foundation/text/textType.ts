@@ -61,7 +61,7 @@ const texts: Readonly<{ [key in TextType]: TextProperties }> = Object.freeze({
         lineHeight: '150%'
     },
     [TextType.p2]: {
-        fontWeight: 600,
+        fontWeight: 500,
         fontSize: 18,
         lineHeight: '150%'
     },

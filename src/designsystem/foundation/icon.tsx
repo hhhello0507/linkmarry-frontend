@@ -50,6 +50,7 @@ import LoudSpeaker from "./icon/LoudSpeaker";
 import Manage from "./icon/Manage";
 import Moon from "./icon/Moon";
 import AddRing from "./icon/AddRing";
+import ArcticonsSpotistats from "./icon/ArcticonsSpotistats";
 
 export enum IconType {
     AddEmoji,
@@ -58,6 +59,7 @@ export enum IconType {
     AddRing,
     Alarm,
     AlarmDisabled,
+    ArcticonsSpotistats,
     Book,
     BookmarkFill,
     BookmarkLine,
@@ -132,6 +134,8 @@ export default function Icon(
             return <Alarm fill={tint} width={size} height={size} {...props}/>;
         case IconType.AlarmDisabled:
             return <AlarmDisabled fill={tint} width={size} height={size} {...props}/>;
+        case IconType.ArcticonsSpotistats:
+            return <ArcticonsSpotistats fill={tint} width={size} height={size} {...props}/>;
         case IconType.Book:
             return <Book fill={tint} width={size} height={size} {...props}/>;
         case IconType.BookmarkFill:

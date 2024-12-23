@@ -2,7 +2,7 @@ import React, {ChangeEventHandler, CSSProperties, HTMLAttributes, LegacyRef, use
 import styled, {css} from "styled-components";
 import makeText, {TextType} from "../foundation/text/textType";
 import Icon, {IconType} from "../foundation/icon";
-import color from "../foundation/color";
+import colors from "../foundation/colors";
 
 interface TextFieldProps extends HTMLAttributes<HTMLDivElement> {
     label: string;
@@ -42,9 +42,9 @@ export const TextField = (
         borderColor = '#0083F0'
         inputBackground = 'rgba(0, 139, 255, 0.03)';
     } else {
-        labelColor = color.g500;
-        borderColor = color.g200;
-        inputBackground = color.white;
+        labelColor = colors.g500;
+        borderColor = colors.g200;
+        inputBackground = colors.white;
     }
 
     return (
@@ -74,7 +74,7 @@ export const TextField = (
                 )}
             </S.inputContainer>
             <S.supportingText style={{
-                color: isError ? '#FF4242' : color.g500
+                color: isError ? '#FF4242' : colors.g500
             }}>{supportingText}</S.supportingText>
         </S.textField>
     );

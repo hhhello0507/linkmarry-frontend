@@ -1,6 +1,6 @@
 import React, {CSSProperties} from 'react';
 import styled from "styled-components";
-import color from "../foundation/color";
+import colors from "../foundation/colors";
 
 export type HorizontalDividerSize = 'large' | 'medium' | 'small'; 
 
@@ -37,7 +37,7 @@ function HorizontalDivider(
 const S = {
     Divider: styled.div`
         width: 100%;
-        background: ${color.g100};
+        background: ${colors.g100};
     `
 }
 

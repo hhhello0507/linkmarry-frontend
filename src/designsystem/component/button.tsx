@@ -1,7 +1,7 @@
 import Icon, {IconType} from "../foundation/icon";
 import styled from "styled-components";
 import makeText, {TextType} from "../foundation/text/textType";
-import color from "../foundation/color";
+import colors from "../foundation/colors";
 import {CSSProperties} from "react";
 
 export type ButtonSize = 'large' | 'medium' | 'small';
@@ -29,16 +29,16 @@ export default function Button(
     let background: string, foreground: string;
     switch (role) {
         case 'primary':
-            background = color.p700;
-            foreground = color.p100;
+            background = colors.p700;
+            foreground = colors.p100;
             break;
         case 'secondary':
-            background = color.p100;
-            foreground = color.p800;
+            background = colors.p100;
+            foreground = colors.p800;
             break;
         case 'assistive':
-            background = color.g100;
-            foreground = color.g600;
+            background = colors.g100;
+            foreground = colors.g600;
             break;
     }
 
