@@ -16,8 +16,9 @@ function Spacer(
 ) {
     return (
         <div style={{
-            minWidth: `${w}px`,
-            minHeight: `${h}px`,
+            minWidth: w &&`${w}px`,
+            minHeight: h && `${h}px`,
+            flex: !w && !h ? 1 : undefined,
             ...style
         }} {...props}/>
     );

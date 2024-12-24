@@ -51,6 +51,7 @@ import Manage from "./icon/Manage";
 import Moon from "./icon/Moon";
 import AddRing from "./icon/AddRing";
 import ArcticonsSpotistats from "./icon/ArcticonsSpotistats";
+import Hamburger from "./icon/Hamburger";
 
 export enum IconType {
     AddEmoji,
@@ -80,6 +81,7 @@ export enum IconType {
     ExclamationLine,
     ExpandArrow,
     File,
+    Hamburger,
     HeartFill,
     HeartLine,
     Hide,
@@ -176,6 +178,8 @@ export default function Icon(
             return <ExpandArrow fill={tint} width={size} height={size} {...props}/>;
         case IconType.File:
             return <File fill={tint} width={size} height={size} {...props}/>;
+        case IconType.Hamburger:
+            return <Hamburger fill={tint} width={size} height={size} {...props}/>;
         case IconType.HeartFill:
             return <HeartFill fill={tint} width={size} height={size} {...props}/>;
         case IconType.HeartLine:

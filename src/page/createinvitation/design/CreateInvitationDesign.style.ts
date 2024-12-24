@@ -6,6 +6,10 @@ const S = {
     container: styled.div`
         display: flex;
         flex: 1;
+    `,
+    optionContainer: styled.div`
+        display: flex;
+        flex: 1;
         flex-direction: column;
         background: ${colors.g100};
         padding: 48px 44px 109px 44px;

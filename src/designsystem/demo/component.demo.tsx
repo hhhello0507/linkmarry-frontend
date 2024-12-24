@@ -75,12 +75,12 @@ function ComponentDemo() {
                 style={{
                     marginTop: 32
                 }}
-                title={'title'}
+                label={'title'}
                 checked={checked}
                 onChange={setChecked}
             />
             <Checkbox
-                title={'title'}
+                label={'title'}
                 checked={checked}
                 rounded={true}
                 onChange={setChecked}

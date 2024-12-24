@@ -52,6 +52,7 @@ const S = {
         background: ${colors.white};
     `,
     items: styled.ul`
+        width: 98px;
         margin-top: 80px;
         margin-right: 62px;
     `,

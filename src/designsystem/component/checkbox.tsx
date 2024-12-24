@@ -7,7 +7,7 @@ import makeText, {TextType} from "../foundation/text/textType";
 interface CheckboxProps {
     checked: boolean;
     onChange: (value: boolean) => void;
-    title?: string;
+    label?: string;
     rounded?: boolean;
     style?: CSSProperties;
 }
@@ -16,7 +16,7 @@ function Checkbox(
     {
         checked,
         onChange,
-        title,
+        label,
         rounded = false,
         style
     }: CheckboxProps,
@@ -33,7 +33,7 @@ function Checkbox(
             >
                 {checked && <Icon type={IconType.CheckLine} tint={colors.white} size={18}/>}
             </S.checkbox>
-            {title && <S.title>{title}</S.title>}
+            {label && <S.title>{label}</S.title>}
         </S.container>
     );
 }
