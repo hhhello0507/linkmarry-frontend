@@ -5,8 +5,9 @@ const S = {
     container: styled.div`
         display: flex;
         width: 100vw;
-        height: 100vh;
+        flex: 1;
         background: ${colors.g200};
+        overflow: hidden;
     `
 };
 

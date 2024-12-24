@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import {BaseFlex, Column, Row} from "../../../designsystem/component/flexLayout";
-import HorizontalDivider from "../../../designsystem/component/horizontalDivider";
+import {BaseFlex, Column, Row} from "../../../../designsystem/component/flexLayout";
+import HorizontalDivider from "../../../../designsystem/component/horizontalDivider";
 import OptionLabel from "./OptionLabel";
 import OptionTextField from "./OptionTextField";
-import Checkbox from "../../../designsystem/component/checkbox";
+import Checkbox from "../../../../designsystem/component/checkbox";
 
 function BaseInfoOption() {
     return (
@@ -46,7 +46,7 @@ function BaseInfoOption() {
                         </BaseFlex>
                     </Row>
                 </Column>
-                <HorizontalDivider size={'small'}/>
+                <HorizontalDivider/>
                 <Column gap={16} alignItems={'stretch'}>
                     <Row alignItems={'center'} gap={12}>
                         <OptionLabel label={'신부'}/>
@@ -83,7 +83,7 @@ function BaseInfoOption() {
                         </BaseFlex>
                     </Row>
                 </Column>
-                <HorizontalDivider size={'small'}/>
+                <HorizontalDivider/>
                 <Column gap={12}>
                     <Row alignItems={'center'} gap={12}>
                         <OptionLabel label={'故人 표기'}/>

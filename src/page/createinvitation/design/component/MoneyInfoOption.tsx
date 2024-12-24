@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 
-function Header() {
+function MoneyInfoOption() {
     return (
         <S.container>
-            <span>logo</span>
+            
         </S.container>
     );
 }
@@ -12,10 +12,8 @@ function Header() {
 const S = {
     container: styled.div`
         display: flex;
-        width: 100vw;
-        height: 96px;
-        align-items: center;
+        padding: 36px;
     `
-};
+}
 
-export default Header;
+export default MoneyInfoOption;

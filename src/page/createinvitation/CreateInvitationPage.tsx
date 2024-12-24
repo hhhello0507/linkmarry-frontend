@@ -3,6 +3,7 @@ import S from './CreateInvitationPage.style';
 import CreateInvitationSideBar from "./component/CreateInvitationSideBar";
 import {CreateInvitationSideBarType} from "./component/CreateInvitationSideBarType";
 import CreateInvitationDesign from "./design/CreateInvitationDesign";
+import HasHeader from "../../designsystem/component/header/hasHeader";
 
 function CreateInvitationPage() {
     const [selectedSideBarType, setSelectedSideBarType] = useState<CreateInvitationSideBarType>('dashboard');
@@ -19,12 +20,14 @@ function CreateInvitationPage() {
     };
 
     return (
-        <S.container>
-            <CreateInvitationSideBar selected={selectedSideBarType} onChange={item => {
-                setSelectedSideBarType(item);
-            }}/>
-            {subPage()}
-        </S.container>
+        <HasHeader>
+            <S.container>
+                <CreateInvitationSideBar selected={selectedSideBarType} onChange={item => {
+                    setSelectedSideBarType(item);
+                }}/>
+                {subPage()}
+            </S.container>
+        </HasHeader>
     );
 }
 

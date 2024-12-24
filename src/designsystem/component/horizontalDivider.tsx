@@ -5,15 +5,14 @@ import colors from "../foundation/colors";
 export type HorizontalDividerSize = 'large' | 'medium' | 'small'; 
 
 interface HorizontalDividerProps {
-    size: HorizontalDividerSize;
+    size?: HorizontalDividerSize;
 }
 
 function HorizontalDivider(
     {
-        size
+        size = 'small'
     }: HorizontalDividerProps
 ) {
-    
     let height: CSSProperties['height'];
     switch (size) {
         case 'large':

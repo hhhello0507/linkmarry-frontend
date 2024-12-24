@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import makeText, {TextType} from "../../../designsystem/foundation/text/textType";
-import colors from "../../../designsystem/foundation/colors";
+import makeText, {TextType} from "../../../../designsystem/foundation/text/textType";
+import colors from "../../../../designsystem/foundation/colors";
 
 interface OptionLabelProps {
     label: string;

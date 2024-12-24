@@ -13,6 +13,7 @@ const S = {
         flex-direction: column;
         background: ${colors.g100};
         padding: 48px 44px 109px 44px;
+        overflow-y: scroll;
     `,
     title: styled.span`
         display: flex;
@@ -26,6 +27,9 @@ const S = {
         margin-top: 8px;
     `,
     options: styled.ul`
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         justify-self: stretch;
         margin-top: 20px;
     `

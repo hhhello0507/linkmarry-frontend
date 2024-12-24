@@ -1,9 +1,9 @@
 import React, {HTMLAttributes, useEffect, useState} from 'react';
 import styled from "styled-components";
-import makeText, {TextType} from "../../../designsystem/foundation/text/textType";
-import colors from "../../../designsystem/foundation/colors";
-import Icon, {IconType} from "../../../designsystem/foundation/icon";
-import Spacer from "../../../designsystem/component/spacer";
+import makeText, {TextType} from "../../../../designsystem/foundation/text/textType";
+import colors from "../../../../designsystem/foundation/colors";
+import Icon, {IconType} from "../../../../designsystem/foundation/icon";
+import Spacer from "../../../../designsystem/component/spacer";
 
 interface OptionCellProps extends HTMLAttributes<HTMLDivElement> {
     title: string;
