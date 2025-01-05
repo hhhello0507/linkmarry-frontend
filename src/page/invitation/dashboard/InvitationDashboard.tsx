@@ -9,7 +9,7 @@ import Text from "@designsystem/component/text";
 import {TextType} from "@designsystem/foundation/text/textType";
 import RemoveDesignDialog from "@page/invitation/dashboard/dialog/RemoveDesignDialog";
 import EditDesignDialog from "@page/invitation/dashboard/dialog/EditDesignDialog";
-import WeddingDashboard, {dummyWeddingDashboard} from "@remote/value/WeddingDashboard";
+import WeddingDashboard from "@remote/value/WeddingDashboard";
 import weddingApi from "@remote/api/WeddingApi";
 
 function InvitationDashboard() {
@@ -25,6 +25,16 @@ function InvitationDashboard() {
             setWeddingDashboard(data);
         })();
     }, []);
+
+    const onClickRemove = async () => {
+        try {
+            // TODO
+            // await weddingApi.de
+            alert('remove');
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <S.container>
@@ -44,7 +54,9 @@ function InvitationDashboard() {
                     </S.createDesignButton>
                     {weddingDashboard ? (
                         weddingDashboard.weddingInfo.map((weddingInfo, index) =>
-                            <DashboardInvitationCell key={index} weddingInfo={weddingInfo}/>
+                            <DashboardInvitationCell key={index} weddingInfo={weddingInfo} onClickRemove={() => {
+                                setShowRemoveDesignDialog(true);
+                            }}/>
                         )
                     ) : (
                         <div>...</div>
@@ -52,7 +64,7 @@ function InvitationDashboard() {
                 </S.items>
             </Column>
             {showCreateDesignDialog && <CreateDesignDialog dismiss={() => setShowCreateDesignDialog(false)}/>}
-            {showRemoveDesignDialog && <RemoveDesignDialog dismiss={() => setShowRemoveDesignDialog(false)}/>}
+            {showRemoveDesignDialog && <RemoveDesignDialog dismiss={() => setShowRemoveDesignDialog(false)} confirm={onClickRemove}/>}
             {showEditDesignDialog && <EditDesignDialog dismiss={() => setShowEditDesignDialog(false)}/>}
         </S.container>
     );
