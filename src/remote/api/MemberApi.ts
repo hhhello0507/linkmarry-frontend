@@ -19,7 +19,7 @@ class MemberApi {
     /**
      * 자신의 프로필 불러오기
      */
-    async getMyProfile(): Promise<InfoMember> {
+    async getMyProfile(): Promise<ResponseData<InfoMember>> {
         const {data} = await customApi.get(`${MemberApi.PATH}/info`);
         return data;
     }
@@ -29,6 +29,14 @@ class MemberApi {
      */
     async editMyProfile(req: EditMemberRequest): Promise<ResponseVoid> {
         const {data} = await customApi.patch(`${MemberApi.PATH}/edit`, req);
+        return data;
+    }
+
+    /**
+     * 멤버 탈퇴(삭제)
+     */
+    async removeMember(): Promise<ResponseVoid> {
+        const {data} = await customApi.delete(`${MemberApi.PATH}/remove`);
         return data;
     }
 }
