@@ -184,7 +184,6 @@ export const container5 = {
         align-items: stretch;
     `,
     kakaoMap: styled.div`
-        display: flex;
         align-self: stretch;
         height: 307px;
     `
@@ -209,11 +208,4 @@ export const container7 = {
         background: ${({background}) => background};
         align-items: stretch;
     `,
-    comment: styled.div`
-        display: flex;
-        flex-direction: column;
-        padding: 24px;
-        gap: 16px;
-        background: ${colors.white};
-    `
 }
