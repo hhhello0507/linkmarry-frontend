@@ -84,6 +84,7 @@ function GuestCommentsTemplate(
                     selectedGuestComment={selectedRemoveGuestComment}
                     url={url}
                     dismiss={() => setShowRemoveGuestCommentDialog(false)}
+                    onRefresh={onRefresh}
                 />
             )}
             {showGuestCommentsDetailDialog && (
@@ -202,7 +203,7 @@ export function BasicGuestComment(
                     From. {comment.name}
                 </Text>
                 <Text size={12} color={colors.g300} weight={300}>
-                    {comment.createdDate}
+                    {trimString(comment.createdDate, 10)}
                 </Text>
                 <Spacer/>
                 <Icon
