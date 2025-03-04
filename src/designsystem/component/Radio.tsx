@@ -7,10 +7,8 @@ import React, {
     useState
 } from 'react';
 import styled, {css} from "styled-components";
-import Icon, {IconType} from "@designsystem/foundation/icon";
-import makeText from "@designsystem/foundation/text/TextType";
-import CustomStyle from "@designsystem/component/CustomStyle";
-import Text from "@designsystem/component/Text";
+import Icon, {IconType} from "@designsystem/foundation/Icon";
+import CustomStyle from "@designsystem/core/CustomStyle";
 
 interface Props {
     selected?: boolean;
@@ -95,15 +93,16 @@ function Radio(
                     `}
                 />
             </CustomStyle>
-            {label && (
-                <Text
-                    type={'p4'}
-                    customStyle={css`
-                        cursor: pointer;
-                    `}
-                    onClick={() => onChange?.(!selected)}
-                >{label}</Text>
-            )}
+            {/*todo*/}
+            {/*{label && (*/}
+            {/*    <Text*/}
+            {/*        type={'p4'}*/}
+            {/*        customStyle={css`*/}
+            {/*            cursor: pointer;*/}
+            {/*        `}*/}
+            {/*        onClick={() => onChange?.(!selected)}*/}
+            {/*    >{label}</Text>*/}
+            {/*)}*/}
         </S.container>
     );
 }
@@ -117,8 +116,6 @@ const S = {
     `,
     title: styled.span`
         display: inline-flex;
-
-        ${makeText('p4')};
     `
 }
 

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Column, Row} from "@designsystem/component/FlexLayout";
+import {Column, Row} from "@designsystem/core/FlexLayout";
 import Text from "@designsystem/component/Text";
-import Icon, {IconType} from "@designsystem/foundation/icon";
+import Icon, {IconType} from "@designsystem/foundation/Icon";
 import styled, {css} from "styled-components";
 import WeddingSchedule from "@remote/value/WeddingSchedule";
 import BaseInfo, {getBaseInfoByBrideMarkFirst} from "@remote/value/BaseInfo";
-import FadeIn from "@designsystem/component/fadein/FadeIn";
+import FadeIn from "@src/component/fadein/FadeIn";
 
 export type DDayStyle = 'style1' | 'style2';
 type RemainTime = {
@@ -52,7 +52,7 @@ function DDay(
             }
 
             setRemainingTime({
-                days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)), // 남은 일수 
+                days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)), // 남은 일수
                 hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
                 minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),
                 seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)

@@ -16,13 +16,12 @@ import InvitationLetterTemplate, {
     InvitationLetterStyle
 } from "@src/component/template/component/InvitationLetterTemplate";
 import RsvpDialog from "@src/component/template/dialog/rsvp/RsvpDialog";
-import Cookies from "js-cookie";
 import CreateRsvpDialog from "@src/component/template/dialog/rsvp/CreateRsvpDialog";
 import {Helmet} from "react-helmet";
-import {optionRecord, OptionType} from "@page/invitation/design/OptionType";
+import {optionRecord, OptionType} from "@page/design/OptionType";
 import RsvpTemplate from "@src/component/template/component/RsvpTemplate";
 import WaterMarkSheet from "@src/component/template/component/WaterMarkSheet";
-import {Column} from "@designsystem/component/FlexLayout";
+import {Column} from "@designsystem/core/FlexLayout";
 import {css} from "styled-components";
 import {implementText} from "@designsystem/foundation/text/TextProperties";
 
@@ -43,7 +42,8 @@ function TemplateComponent(
     const [showRsvpDialog, setShowRsvpDialog] = useState((() => {
         if (isPreview) return false;
         if (!wedding.rsvp.startPopupStatus) return false;
-        return Cookies.get(`hide_RsvpDialog_${wedding.url}`) === undefined
+        // todo: fix
+        // return Cookies.get(`hide_RsvpDialog_${wedding.url}`) === undefined
     })());
     const [showCreateRsvpDialog, setShowCreateRsvpDialog] = useState(false);
     const {templateColor, templateFont, templateFontSize} = wedding.template;
@@ -52,7 +52,8 @@ function TemplateComponent(
     (() => {
         const addFontSize = templateFontSizeRecord[templateFontSize].addFontSize;
         increaseFontSize(rootRef, addFontSize);
-        Cookies.remove('hide_RsvpDialog')
+        // todo: fix
+        // Cookies.remove('hide_RsvpDialog')
     })();
 
     useEffect(() => {
@@ -102,7 +103,7 @@ function TemplateComponent(
     return (
         <Column ref={rootRef} $customStyle={css`
             max-width: 436px;
-            width: 100vw;
+            width: 100%;
             align-items: stretch;
 
             *:not(.override-font):not(.override-font *) {
@@ -110,10 +111,6 @@ function TemplateComponent(
                     fontFamily: templateFont
                 })};
             }
-
-            border-radius: 12px;
-            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.16);
-            overflow: hidden;
         `}>
             <audio
                 src={wedding.baseMusic.musicUrl}
@@ -224,7 +221,7 @@ function TemplateComponent(
                     dismiss={() => setShowCreateRsvpDialog(false)}
                 />
             )}
-            {wedding.waterMark && (
+            {wedding.waterMark && !isPreview && (
                 <WaterMarkSheet url={wedding.url}/>
             )}
         </Column>

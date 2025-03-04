@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from "styled-components";
-import BaseDialog, {applyBaseDialogContent} from "@designsystem/component/dialog/baseDialog";
-import {Column, Row} from "@designsystem/component/FlexLayout";
+import BaseDialog, {applyBaseDialogContent} from "@designsystem/pattern/dialog/BaseDialog";
+import {Column, Row} from "@designsystem/core/FlexLayout";
 import Text from "@designsystem/component/Text";
 import Button from "@designsystem/component/Button";
 
@@ -27,11 +27,11 @@ function ConfirmCreateRsvpDialog(
                 width: 90vw;
             `}>
                 <Column gap={4} $alignItems={'center'}>
-                    <Text type={'h6'}>참석의사 전달</Text>
+                    {/*<Text type={'h6'}>참석의사 전달</Text>*/}
                     <Text type={'caption1'}>참석의사 전달시 수정이 불가능합니다</Text>
                 </Column>
                 <Row gap={12} $alignSelf={'stretch'}>
-                    <Button text={'취소'} role={'assistive'} onClick={dismiss} style={{flex: 1}}/>
+                    <Button text={'취소'} buttonType={'outlined'} onClick={dismiss} style={{flex: 1}}/>
                     <Button text={'확인'} onClick={onConfirm} style={{flex: 1}}/>
                 </Row>
             </Column>

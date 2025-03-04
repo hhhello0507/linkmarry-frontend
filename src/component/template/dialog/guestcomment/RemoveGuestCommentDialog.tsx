@@ -1,14 +1,12 @@
 import React, {useRef} from 'react';
-import BaseDialog, {applyBaseDialogContent} from "@designsystem/component/dialog/baseDialog";
+import BaseDialog, {applyBaseDialogContent} from "@designsystem/pattern/dialog/BaseDialog";
 import styled, {css} from "styled-components";
-import {Column} from "@designsystem/component/FlexLayout";
+import {Column} from "@designsystem/core/FlexLayout";
 import Text from "@designsystem/component/Text";
-import TextField from "@designsystem/component/TextField";
 import Button from "@designsystem/component/Button";
 import weddingApi from "@remote/api/WeddingApi";
 import Comment from "@remote/value/Comment";
 import {isAxiosError} from "axios";
-import {useNavigate} from "react-router-dom";
 
 interface RemoveGuestCommentDialogProps {
     url: string;
@@ -56,13 +54,13 @@ function RemoveGuestCommentDialog(
         <BaseDialog dismiss={dismiss}>
             <S.container>
                 <Column gap={4} $alignItems={'center'}>
-                    <Text type={'h6'}>글 삭제하기</Text>
+                    {/*<Text type={'h6'}>글 삭제하기</Text>*/}
                     <Text type={'caption1'} customStyle={css`
                         color: var(--g-400);
                     `}>관리자와 글 작성자만 글을 삭제할 수 있습니다</Text>
                 </Column>
-                <TextField ref={passwordRef} placeholder={'비밀번호 입력'}/>
-                <Button text={'삭제'} role={'assistive'} onClick={onClickRemove}/>
+                {/*<TextField ref={passwordRef} placeholder={'비밀번호 입력'}/>*/}
+                <Button text={'삭제'} buttonType={'outlined'} onClick={onClickRemove}/>
             </S.container>
         </BaseDialog>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseDialog, {applyBaseDialogContent} from "@designsystem/component/dialog/baseDialog";
+import BaseDialog, {applyBaseDialogContent} from "@designsystem/pattern/dialog/BaseDialog";
 import styled, {css} from "styled-components";
-import {Column} from "@designsystem/component/FlexLayout";
+import {Column} from "@designsystem/core/FlexLayout";
 import Divider from "@designsystem/component/Divider";
 import Text from "@designsystem/component/Text";
 import BaseInfo, {getBaseInfoByBrideMarkFirst} from "@remote/value/BaseInfo";
@@ -10,7 +10,6 @@ import WeddingPlace from "@remote/value/WeddingPlace";
 import {format, parse} from "date-fns";
 import {ko} from "date-fns/locale";
 import Button from "@designsystem/component/Button";
-import Cookies from "js-cookie";
 import Rsvp from "@remote/value/Rsvp";
 
 interface RsvpDialogProps {
@@ -51,10 +50,11 @@ function RsvpDialog(
             `}>
                 <Column gap={24} $alignItems={'stretch'}>
                     <Column gap={4} $alignItems={'center'}>
-                        <Text type={'h6'} customStyle={css`
-                            word-break: break-all;
-                            text-align: center;
-                        `}>{rsvp.rsvpTitle}</Text>
+                        {/*todo*/}
+                        {/*<Text type={'h6'} customStyle={css`*/}
+                        {/*    word-break: break-all;*/}
+                        {/*    text-align: center;*/}
+                        {/*`}>{rsvp.rsvpTitle}</Text>*/}
                         <Text type={'caption1'} customStyle={css`
                             word-break: break-all;
                             text-align: center;
@@ -81,7 +81,8 @@ function RsvpDialog(
                             cursor: pointer;
                         `}
                         onClick={() => {
-                            Cookies.set(`hide_RsvpDialog_${url}`, 'true', {expires: 1});
+                            // todo: fix
+                            // Cookies.set(`hide_RsvpDialog_${url}`, 'true', {expires: 1});
                             dismiss();
                         }}
                     >오늘 하루 보지 않기</Text>

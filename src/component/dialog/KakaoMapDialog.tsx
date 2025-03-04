@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {css} from "styled-components";
-import BaseDialog, {applyBaseDialogContent} from "@designsystem/component/dialog/baseDialog";
-import {Column} from "@designsystem/component/FlexLayout";
-import CustomStyle from "@designsystem/component/CustomStyle";
+import BaseDialog, {applyBaseDialogContent} from "@designsystem/pattern/dialog/BaseDialog";
+import {Column} from "@designsystem/core/FlexLayout";
+import CustomStyle from "@designsystem/core/CustomStyle";
 import Button from "@designsystem/component/Button";
 import Text from "@designsystem/component/Text";
 import WeddingPlace from "@remote/value/WeddingPlace";
@@ -130,17 +130,17 @@ function KakaoMapDialog(
                                     }}
                                 >
                                     <Text type={'p2'}>{place.address_name}</Text>
-                                    <Text
-                                        type={'p5'}
-                                        customStyle={css`
-                                            text-decoration: underline;
-                                            color: var(--g-500);
-                                            cursor: pointer;
-                                        `}
-                                        onClick={() => {
-                                            window.open(place.place_url, '_blank');
-                                        }}
-                                    >{place.place_name}</Text>
+                                    {/*<Text*/}
+                                    {/*    type={'p5'}*/}
+                                    {/*    customStyle={css`*/}
+                                    {/*        text-decoration: underline;*/}
+                                    {/*        color: var(--g-500);*/}
+                                    {/*        cursor: pointer;*/}
+                                    {/*    `}*/}
+                                    {/*    onClick={() => {*/}
+                                    {/*        window.open(place.place_url, '_blank');*/}
+                                    {/*    }}*/}
+                                    {/*>{place.place_name}</Text>*/}
                                 </Column>
                             );
                         })}
