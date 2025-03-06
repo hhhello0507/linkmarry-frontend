@@ -7,14 +7,16 @@ import Icon, {IconType} from "@designsystem/foundation/Icon";
 import {hideScrollBar, makeInteractionEffect} from "@util/css.util";
 import TemplateComponent from "@src/component/template/TemplateComponent";
 import {dummyWedding} from "@remote/value/Wedding";
+import useAutoFocus from "@hook/useAutoFocus";
+import Toggle from "@designsystem/component/Toggle";
 
 const EditorPreview = () => {
     return (
-        <Column flex={1} $alignItems={'center'} $justifyContent={'center'} $customStyle={css`
+        <Column flex={1} $alignItems={'center'} $justifyContent={'center'} css={css`
             background: var(--g-100);
             position: relative;
         `}>
-            <Column $alignItems={'stretch'} $customStyle={css`
+            <Column $alignItems={'stretch'} css={css`
                 max-width: 368px;
                 max-height: 733px;
                 overflow-y: scroll;
@@ -32,10 +34,12 @@ const EditorPreview = () => {
 
 const PreviewSetting = () => {
     const [openSetting, setOpenSetting] = useState(false);
+    const {autoFocus, setAutoFocus} = useAutoFocus();
+
     return (
-        <Column gap={8} $alignItems={'stretch'} $customStyle={css`
+        <Column gap={4} $alignItems={'stretch'} css={css`
             width: 220px;
-            padding: 8px;
+            padding: 10px;
             background: white;
             border-radius: 12px;
             position: absolute;
@@ -49,8 +53,8 @@ const PreviewSetting = () => {
             transition: 0.2s max-height ease-out;
             overflow: hidden;
         `}>
-            <Row $alignItems={'center'} $customStyle={css`
-                padding: 8px;
+            <Row $alignItems={'center'} css={css`
+                padding: 6px;
                 border-radius: 6px;
                 ${makeInteractionEffect('strong')};
             `} onClick={() => {
@@ -70,15 +74,14 @@ const PreviewSetting = () => {
                     `};
                 `}/>
             </Row>
-            <Row $alignItems={'center'} $customStyle={css`
-                padding: 4px 8px;
+            <Row $alignItems={'center'} css={css`
+                padding: 6px;
             `}>
                 <Text type={'p3'} customStyle={css`
                     color: var(--g-600);
                 `}>자동포커스</Text>
                 <Spacer/>
-                {/*todo*/}
-                {/*<Toggle checked={false} customStyle={}/>*/}
+                <Toggle checked={autoFocus} OnChange={checked => setAutoFocus(checked)}/>
             </Row>
         </Column>
     );
