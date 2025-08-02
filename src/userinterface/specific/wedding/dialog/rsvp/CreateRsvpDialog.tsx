@@ -42,7 +42,7 @@ function CreateRsvpDialog(
     const createRsvp = async () => {
         await weddingApi.createRsvp({
             url,
-            guestType: guestType === 0 ? GuestType.GROOM : GuestType.BRIDE,
+            guestType: guestType === 0 ? GuestType.BRIDE : GuestType.GROOM,
             isAttend: isAttend === 0,
             isMeal: isMeal === 0,
             guestName: guestName,
@@ -51,6 +51,7 @@ function CreateRsvpDialog(
             guestCnt: guestCnt,
             guestComment: guestComment,
         });
+        alert('참석 의사를 전달했습니다.');
         dismiss();
     }
 
