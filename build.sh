@@ -1,7 +1,5 @@
 #!/bin/sh
 cd ../
-mkdir -p output
-shopt -s dotglob
+mkdir output
 cp -R ./linkmarry-frontend/* ./output
-shopt -u dotglob
 cp -R ./output ./linkmarry-frontend/
