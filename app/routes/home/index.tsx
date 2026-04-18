@@ -625,7 +625,7 @@ const section4Data = [
         isHot: false
     },
     {
-        src: '/home/section4-dream-WeddingComponent.png',
+        src: '/home/section4-dream-wedding.png',
         title: 'Dream Wedding',
         category: 'Romantic',
         isHot: false
@@ -682,7 +682,7 @@ function Section4({onViewSample}: Section4Props) {
                             line-height: 150%;
                         }
                     `}>
-                        100가지가 넘는 다양한 스타일, 나만의 청첩장을 무료로 제작
+                        다양한 스타일, 나만의 청첩장을 무료로 제작
                     </Text>
                 </View>
                 <View ui={cx(
@@ -1200,7 +1200,7 @@ function Section6({onNavigateNaverStore}: Section6Props) {
                                             line-height: 140%;
                                         }
                                     `}>
-                                        8,700원
+                                        12,800원
                                     </Text>
                                 </View>
                             </View>
